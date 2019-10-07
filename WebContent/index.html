@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+	<noscript>Javascipt is disabled - It must be enabled to use this page.</noscript>
+	<h1>Please input some text</h1>
+	<input type="textbox" id="input"></input>
+	<button onClick="submit()">Submit</button>
+	<h1>Output:</h1>
+	<h3 id="output"></h3>
+</body>
+<script>
+function submit() {
+	console.log($("#input").val());
+	httpGetAsync("/Dosimetry_Calculator/Calculator", update);
+}
+
+function update(response) {
+	console.log("response!  " + response);
+	$("#output").text(response);
+}
+
+function httpGetAsync(theUrl, callback)
+{
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.onreadystatechange = function() { 
+        if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
+            callback(xmlHttp.responseText);
+    }
+    xmlHttp.open("GET", theUrl, true); // true for asynchronous 
+    var basic = $("#input").val();
+    xmlHttp.setRequestHeader("basic", basic);
+    xmlHttp.send();
+    
+}
+</script>
+</html>
