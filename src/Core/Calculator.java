@@ -32,16 +32,24 @@ public class Calculator extends HttpServlet {
 		PrintWriter writer = response.getWriter();
 		
 		//Get Inputted String From Header
-		String inputString = request.getHeader("basic");
-		String emptyString = "";
-		//Reverse the string (copying into EmptyString)
-		for (int i = 0; i < inputString.length(); i++) {
-			int index = inputString.length()-(1+i);
-			emptyString += inputString.charAt(index);
-		}
+		String firstName = request.getParameter("firstName");
+		String lastName = request.getParameter("lastName");
 		
-		//Return the new string
-		writer.println(emptyString);
+		//testing:
+		System.out.println("First Name: " + firstName);
+		System.out.println("Last Name: " + lastName);
+		
+		//Here is where we call the calculations:
+		
+		
+		
+		
+		//Build HTML Output
+		
+		
+		
+		//Return the output
+		writer.println(firstName);
 		
 	}
 

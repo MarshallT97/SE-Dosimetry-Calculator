@@ -6,12 +6,48 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 <body>
-	<noscript>Javascipt is disabled - It must be enabled to use this page.</noscript>
-	<h1>Please input some text</h1>
-	<input type="textbox" id="input"></input>
-	<button onClick="submit()">Submit</button>
-	<h1>Output:</h1>
-	<h3 id="output"></h3>
+	<noscript>Javascript is disabled - It must be enabled to use this page.</noscript>
+	
+	<h1>Patient Information</h1>
+	<form name="patientInfo" method="get" action="/Dosimetry_Calculator/Calculator">
+	<h4>Patient Anatomy</h4>
+	<label>First Name</label>
+	<input type="text" name="firstName"/> <br/>
+	<label>Last Name</label>
+	<input type="text" name="lastName"/> <br/>
+	<label>Patient ID</label>
+	<input type="text" name="ID"/> <br/>
+	<label>Height</label>
+	<input type="text" name="height"/> <br/>
+	<label>Gender</label>
+	<input type="text" name="gender"/> <br/>
+	<label>Age</label>
+	<input type="text" name="age"/> <br/>
+	
+	<h4>Cancer Details</h4>
+	<label>Tumor Location</label>
+	<input type="text" name="tumorLocation"/> <br/>
+	<label>Cancer Stage</label>
+	<input type="text" name="cancerStage"/> <br/>
+	<label>Tumor Mass</label>
+	<input type="text" name="tumorMass"/> <br/>
+	<label>Tumor Quantity</label>
+	<input type="text" name="tumorQuantity"/> <br/>
+	
+	<h4>Blood Levels</h4>
+	<label>Glucose, Serum</label>
+	<input type="text" name="glucose"/> <br/>
+	<label>Sodium, Serum</label>
+	<input type="text" name="glucose"/> <br/>
+	<label>Chloride, Serum</label>
+	<input type="text" name="glucose"/> <br/>
+	<label>Albumin, Serum</label>
+	<input type="text" name="glucose"/> <br/>
+	
+	<button type="submit">Submit</button>
+	</form>
+	
+	
 </body>
 <script>
 function submit() {
