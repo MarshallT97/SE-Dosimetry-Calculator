@@ -1,0 +1,74 @@
+
+html, body{
+	background: lightgrey;
+	margin: 0 auto;
+	height: 100%;
+	overflow: hidden;
+}
+
+.field {
+	padding: 5px;
+}
+.field > label {
+	float: left;
+	padding-left: 40px;
+}
+.field > input {
+	float: right;
+	width: 60%;
+	margin-right: 20px;
+}
+.field > select {
+	float: right;
+	width: 61%;
+	margin-right: 20px;
+	height: 21.33px;
+}
+
+
+h4 {
+	margin-block-end: .5em;
+}
+
+.header {
+	grid-area: header;
+	text-align: center;
+}
+
+.anatomy {
+	grid-area: anatomy;
+}
+
+.cancer {
+	grid-area: cancer;
+}
+
+.blood {
+	grid-area: blood;
+}
+
+.other {
+	grid-area: other;
+}
+
+.submit {
+	grid-area: submit;
+}
+
+.grid-container {
+	display: grid;
+	grid-template-areas:
+		'header header'
+		'anatomy cancer'
+		'blood other'
+		'submit submit';
+	grid-gap: 10px;
+	/*background-color: blue;*/
+}
+
+.grid-container > div {
+	/*background-color: lightblue;*/
+
+	text-align: center;
+}
+

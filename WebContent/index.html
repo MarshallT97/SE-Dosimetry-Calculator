@@ -4,74 +4,72 @@
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
 	<noscript>Javascript is disabled - It must be enabled to use this page.</noscript>
-	
-	<h1>Patient Information</h1>
+	<div class="header">
+		<h1>Dosimetry Calculator</h1>
+	</div>
 	<form name="patientInfo" method="get" action="/Dosimetry_Calculator/Calculator">
-	<h4>Patient Anatomy</h4>
-	<label>First Name</label>
-	<input type="text" name="firstName"/> <br/>
-	<label>Last Name</label>
-	<input type="text" name="lastName"/> <br/>
-	<label>Patient ID</label>
-	<input type="text" name="ID"/> <br/>
-	<label>Height</label>
-	<input type="text" name="height"/> <br/>
-	<label>Gender</label>
-	<input type="text" name="gender"/> <br/>
-	<label>Age</label>
-	<input type="text" name="age"/> <br/>
-	
-	<h4>Cancer Details</h4>
-	<label>Tumor Location</label>
-	<input type="text" name="tumorLocation"/> <br/>
-	<label>Cancer Stage</label>
-	<input type="text" name="cancerStage"/> <br/>
-	<label>Tumor Mass</label>
-	<input type="text" name="tumorMass"/> <br/>
-	<label>Tumor Quantity</label>
-	<input type="text" name="tumorQuantity"/> <br/>
-	
-	<h4>Blood Levels</h4>
-	<label>Glucose, Serum</label>
-	<input type="text" name="glucose"/> <br/>
-	<label>Sodium, Serum</label>
-	<input type="text" name="glucose"/> <br/>
-	<label>Chloride, Serum</label>
-	<input type="text" name="glucose"/> <br/>
-	<label>Albumin, Serum</label>
-	<input type="text" name="glucose"/> <br/>
-	
-	<button type="submit">Submit</button>
+		<div class="grid-container">
+	<div class="anatomy">
+		<h4>Patient Anatomy</h4>
+
+		<div class="field"><label>First Name: </label>
+		<input type="text" name="firstName" placeholder="First Name"/> <br/></div>
+		<div class="field"><label>Last Name: </label>
+		<input type="text" name="lastName" placeholder="Last Name"/> <br/></div>
+		<div class="field"><label>Patient ID: </label>
+		<input type="number" name="ID" placeholder="12345678"/> <br/></div>
+		<div class="field"><label>Height: </label>
+		<input type="text" name="height" placeholder="5' 9&quot;" /> <br/></div>
+		<div class="field"><label>Gender: </label>
+		<select name="Gender">
+			<option value="M">Male</option>
+			<option value="F">Female</option>
+		</select><br/></div>
+		<div class="field"><label>Age: </label>
+		<input type="number" name="age" placeholder="35" /> <br/></div>
+	</div>
+
+	<div class="cancer">
+		<h4>Cancer Details</h4>
+		<div class="field"><label>Tumor Location: </label>
+		<input type="text" name="tumorLocation" placeholder="location" /> <br/></div>
+		<div class="field"><label>Cancer Stage: </label>
+		<input type="text" name="cancerStage" placeholder="stage"/> <br/></div>
+		<div class="field"><label>Tumor Mass: </label>
+		<input type="text" name="tumorMass" placeholder="mass"/> <br/></div>
+		<div class="field"><label>Tumor Quantity: </label>
+		<input type="text" name="tumorQuantity" placeholder="quantity"/> <br/></div>
+	</div>
+
+	<div class="blood">
+		<h4>Blood Levels</h4>
+		<div class="field"><label>Glucose, Serum: </label>
+		<input type="text" name="glucose" placeholder="mmol/L"/> <br/></div>
+		<div class="field"><label>Sodium, Serum: </label>
+		<input type="text" name="glucose" placeholder="mmol/L"/> <br/></div>
+		<div class="field"><label>Chloride, Serum: </label>
+		<input type="text" name="glucose" placeholder="mmol/L"/> <br/></div>
+		<div class="field"><label>Albumin, Serum: </label>
+		<input type="text" name="glucose" placeholder="mmol/L"/> <br/></div>
+	</div>
+
+	<div class="other">
+		<h4>Comments & Concerns</h4>
+		<textarea name="comments" rows="8" cols="50" placeholder="Special comments and concerns for the patient records."></textarea>
+	</div>
+
+	<div class="submit">
+		<button type="submit">Submit</button>
+	</div>
+
+	</div>
 	</form>
-	
-	
+		
 </body>
-<script>
-function submit() {
-	console.log($("#input").val());
-	httpGetAsync("/Dosimetry_Calculator/Calculator", update);
-}
-
-function update(response) {
-	console.log("response!  " + response);
-	$("#output").text(response);
-}
-
-function httpGetAsync(theUrl, callback)
-{
-    var xmlHttp = new XMLHttpRequest();
-    xmlHttp.onreadystatechange = function() { 
-        if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
-            callback(xmlHttp.responseText);
-    }
-    xmlHttp.open("GET", theUrl, true); // true for asynchronous 
-    var basic = $("#input").val();
-    xmlHttp.setRequestHeader("basic", basic);
-    xmlHttp.send();
-    
-}
-</script>
 </html>
