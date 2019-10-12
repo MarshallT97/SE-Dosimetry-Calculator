@@ -1,0 +1,15 @@
+.info {
+	display: flex;
+	flex-wrap: wrap;
+}
+.info > div {
+	width: 30%;
+}
+
+.top-row {
+	display: flex;
+}
+
+.top-row > div {
+	width: 25%;
+}

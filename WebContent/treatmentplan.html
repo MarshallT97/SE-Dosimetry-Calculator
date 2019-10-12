@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<link rel="stylesheet" href="css/treatment.css">
+</head>
+<body>
+
+<h1>Treatment Plan</h1>
+<div class="sections">
+	<div class="info">
+		<div class="patientName">
+			<h4>Patient Name: </h4><p>John Doe</p>
+		</div>
+		<div class="age">
+			<h4>Age: </h4><p>62</p>
+		</div>
+		<div class="gender">
+			<h4>Gender: </h4>
+			<p>M</p>
+		</div>
+		<div class="height">
+			<h4>Height:</h4>
+			<p>5' 10"</p>
+		</div>
+		<div class="weight"><h4>Weight: </h4><p>170</p></div>
+		<div class="location"><h4>Tumor Location</h4><p>Adrenal glands</p></div>
+	</div>
+
+	<div class="radiation">
+		<h2>Radiation Plan</h2>
+		<div class="top-row">
+			<div class="radiation-type">
+				<h4>Radiation Type</h4>
+				<h5>3-D CRT</h5>
+			</div>
+			<div class="radiation-dose">
+				<h4>Recommended Dose</h4>
+				<h5>5 Gy/5 Sv</h5>
+			</div>
+			<div class="dangerous">
+				<h4>Dangerous Levels</h4>
+				<h5>7+ Gy/7+ Sv</h5>
+			</div>
+			<div class="dangerous">
+				<h4>Ineffective Range</h4>
+				<h5>0-3 Gy/0-3 Sv</h5>
+			</div>
+		</div>
+		<div class="nearbyStructs">
+			<h3>Nearby Structures Affected:</h3>
+			<ul>
+				<li>Kidneys (1 Gy/1 Sv)</li>
+			</ul>
+		</div>
+		<div class="chemotherapy">
+			<h2>Chemotherapy</h2>
+			<ul id="drugs">
+				<li>Chlorambucil  0.4 </li>
+			</ul>
+		</div>
+	</div>
+	<div class="sideEffects">
+		<h2>Side Effects</h2>
+		<ul id="sideEffects">
+			<li>Nausea</li>
+			<li>Vomiting</li>
+		</ul>
+	</div>
+	<div class="surgery">
+		<h2>Surgery</h2>
+		<h4 id="surgery">None</h4>
+	</div>
+</div>
+
+
+</body>
+</html>
