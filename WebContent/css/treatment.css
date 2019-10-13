@@ -1,9 +1,35 @@
+
+html, body {
+	margin: 0 auto;
+	height: 100%;
+}
+
+.header {
+	text-align: center;
+}
+
+.sections {
+	display: flex;
+	flex-direction: column;
+	height: 80%;
+	justify-content: space-between;
+	margin-right: 10px;
+	margin-left: 10px;
+}
+
 .info {
 	display: flex;
 	flex-wrap: wrap;
+	border-style: solid;
 }
 .info > div {
 	width: 30%;
+	margin-left: 15px;
+}
+
+.info > div > h4 {
+	margin-top: 5px;
+	margin-bottom: 5px;
 }
 
 .top-row {
@@ -12,4 +38,45 @@
 
 .top-row > div {
 	width: 25%;
+}
+
+.top-row > div > h4, h5 {
+	margin-bottom: 0;
+	margin-top: 0;
+}
+
+
+.radiation {
+	border-style: solid;
+}
+
+.radiation > * {
+	margin-left: 15px;
+}
+
+.chemotherapy {
+	border-style: solid;
+
+}
+
+.chemotherapy > * {
+	margin-left: 15px;
+}
+
+.sideEffects {
+	border-style: solid;
+
+}
+
+.sideEffects > * {
+	margin-left: 15px;
+}
+
+.surgery {
+	border-style: solid;
+
+}
+
+.surgery > * {
+	margin-left: 15px;
 }
