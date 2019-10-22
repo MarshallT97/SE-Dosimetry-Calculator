@@ -12,14 +12,14 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class Router
  */
-@WebServlet("/Calculator")
-public class Calculator extends HttpServlet {
+@WebServlet("/Results")
+public class Results extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Calculator() {
+    public Results() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -40,6 +40,10 @@ public class Calculator extends HttpServlet {
 		System.out.println("Last Name: " + lastName);
 		
 		//Here is where we call the calculations:
+		//code stubs:
+		//RadiationCalculator RadiationCalculator = new RadiationCalculator();
+		//var RadiationDose = RadiationCalculator.getRadiation(pt anatomy variables);
+		//print radiation to screen as output
 		
 		
 		
