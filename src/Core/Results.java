@@ -31,13 +31,33 @@ public class Results extends HttpServlet {
 		
 		PrintWriter writer = response.getWriter();
 		
-		//Get Inputted String From Header
+		//Get Input patient data From Header
 		String firstName = request.getParameter("firstName");
 		String lastName = request.getParameter("lastName");
+		String ID = request.getParameter("ID");
+		double height = Double.parseDouble(request.getParameter("height"));
+		String gender = request.getParameter("Gender");
+		int age = Integer.parseInt(request.getParameter("age"));
+
+		String tumorlocation = request.getParameter("tumorLocation");
+		double organmass = Double.parseDouble(request.getParameter("organMass"));
+		int cancerstage = Integer.parseInt(request.getParameter("cancerStage"));
+		double tumormass = Double.parseDouble(request.getParameter("tumorMass"));
+		int tumorquantity = Integer.parseInt(request.getParameter("tumorQuantity"));
+
+		double redblood = Double.parseDouble(request.getParameter("redBlood"));
+		double whiteblood = Double.parseDouble(request.getParameter("whiteBlood"));
+		double glucose = Double.parseDouble(request.getParameter("glucose"));
+		double sodium = Double.parseDouble(request.getParameter("sodium"));
+		double chloride = Double.parseDouble(request.getParameter("chloride"));
+		double albumin = Double.parseDouble(request.getParameter("albumin"));
+
+		//Construct the PatientData object from the patient data
+		PatientData patient = new PatientData(firstName, lastName, ID, height, gender, age, tumorlocation, organmass, cancerstage, tumormass, tumorquantity,
+											  redblood, whiteblood, glucose, sodium, chloride, albumin);
 		
 		//testing:
-		System.out.println("First Name: " + firstName);
-		System.out.println("Last Name: " + lastName);
+		patient.Print();
 		
 		//Here is where we call the calculations:
 		//code stubs:
@@ -53,7 +73,7 @@ public class Results extends HttpServlet {
 		
 		
 		//Return the output
-		writer.println(firstName);
+		//writer.println(firstName);
 		
 	}
 
