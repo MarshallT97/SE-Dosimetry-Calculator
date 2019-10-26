@@ -3,7 +3,6 @@ html, body{
 	background: lightgrey;
 	margin: 0 auto;
 	height: 100%;
-	overflow: hidden;
 }
 
 .field {
