@@ -2,8 +2,22 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
   <display-name>Dosimetry Calculator</display-name>
   
- 
-  
+  <servlet>
+  	<servlet-name>Create</servlet-name>
+  	<servlet-class>Core.CreateServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>Create</servlet-name>
+  	<url-pattern>/create.html</url-pattern>
+  </servlet-mapping>
+  <servlet>
+  	<servlet-name>Home</servlet-name>
+  	<servlet-class>Core.HomeServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>Home</servlet-name>
+  	<url-pattern>/home.html</url-pattern>
+  </servlet-mapping>
   <welcome-file-list>
     <welcome-file>login.jsp</welcome-file>
   </welcome-file-list>

@@ -5,10 +5,10 @@ import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class Login
@@ -30,12 +30,15 @@ public class Login extends HttpServlet {
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
 			
-		int ID = 12345;
-		System.out.println(username + "   " + password);
 		if (username.equals("Hello") && password.equals("1234")) {
+			/* Sessions are better than cookies as they hide sensitive information
 			Cookie userCookie = new Cookie(username, String.valueOf(ID));
 			response.addCookie(userCookie);
 			response.sendRedirect("create.html");
+			*/
+			HttpSession session = request.getSession();  
+	        session.setAttribute("name",username);  
+	        response.sendRedirect("home.html");
 		} else {
 			PrintWriter writer = response.getWriter();
 			writer.println("Bad Username or Password");

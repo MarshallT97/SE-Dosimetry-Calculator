@@ -1,0 +1,50 @@
+ html, body {
+    margin: 0;
+    height: 100%;
+ }	
+
+ a {
+ 	text-underline: none;
+ 	color: black;
+ }
+ body {
+ 	text-align: center;
+ }
+
+ header {
+ 	height: 300px;
+ 	width: 100%;
+ 	position: fixed;
+  	z-index: 1;
+  	margin: 0;
+	padding: 0;
+ }
+ ul {
+	list-style-type: none;
+	
+ }
+
+ li {
+ 	float: left;
+ }
+ li > a {
+ 	text-underline: none;
+ 	color: black;
+ }
+ ul > h5 {
+ 	float: right;
+ }
+
+ .header {
+ 	font-size: 40px;
+ }
+ 
+ #main {
+ 	height: 300px;
+ 	font-size: 20px;
+ }
+
+ footer {
+ 	font-size: 30px;
+ 	height: 300px;
+ }
