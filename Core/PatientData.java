@@ -9,13 +9,12 @@ public class PatientData {
 	private double Height;				//height in inches
 	private String Gender;
 	private int Age;
+	private double Weight;
 	
 	//Tumor attributes
 	private String TumorLocation;		//represents what organ the tumor is on
 	private double OrganMass;			//mass of the organ in kilograms
 	private int CancerStage;			//Stage of cancer
-	private double TumorMass;
-	private int TumorQuantity;
 	
 	//Blood levels
 	private double WhiteBloodCellCount;
@@ -29,10 +28,12 @@ public class PatientData {
 	private double TotalDoseLowRisk;
 	private double TotalDoseMedRisk;
 	private double TotalDoseHighRisk;
+	private int TotalTherapyWeeks;
+	private String RecommendedRiskLevel;
 	
 	//Constructor
-	PatientData(String firstname, String lastname, String ID, double height, String gender, int age,
-			String tumorlocation, double organmass, int cancerstage, double tumormass, int tumorquantity,
+	PatientData(String firstname, String lastname, String ID, double height, String gender, int age, double weight,
+			String tumorlocation, double organmass, int cancerstage, 
 			double whitebloodcellcount, double redbloodcellcount, double glucose, double sodium, double chloride, double albumin)
 	{
 		this.FirstName = firstname;
@@ -41,12 +42,11 @@ public class PatientData {
 		this.Height = height;
 		this.Gender = gender;
 		this.Age = age;
+		this.Weight = weight;
 		
 		this.TumorLocation = tumorlocation;
 		this.OrganMass = organmass;
 		this.CancerStage = cancerstage;
-		this.TumorMass = tumormass;
-		this.TumorQuantity = tumorquantity;
 		
 		this.WhiteBloodCellCount = whitebloodcellcount;
 		this.RedBloodCellCount = redbloodcellcount;
@@ -81,6 +81,10 @@ public class PatientData {
 		this.Age = age;
 	}
 	
+	public void SetWeight(double weight) {
+		this.Weight = weight;
+	}
+	
 	public void SetTumorLocation(String tumorlocation) {
 		this.TumorLocation = tumorlocation;
 	}
@@ -93,13 +97,6 @@ public class PatientData {
 		this.CancerStage = cancerstage;
 	}
 	
-	public void SetTumorMass(double tumormass) {
-		this.TumorMass = tumormass;
-	}
-	
-	public void SetTumorQuantity(int tumorquantity) {
-		this.TumorQuantity = tumorquantity;
-	}
 	
 	public void SetWhiteBloodCellCount(double whitebloodcellcount) {
 		this.WhiteBloodCellCount = whitebloodcellcount;
@@ -138,6 +135,14 @@ public class PatientData {
 		this.TotalDoseHighRisk = dose;
 	}
 	
+	public void SetTotalTherapyWeeks(int weeks) {
+		this.TotalTherapyWeeks = weeks;
+	}
+	
+	public void SetRecommendedRiskLevel(String level) {
+		this.RecommendedRiskLevel = level;
+	}
+	
 	
 	//Getter methods
 	public String GetFirstName() {
@@ -164,6 +169,10 @@ public class PatientData {
 		return this.Age;
 	}
 	
+	public double GetWeight() {
+		return this.Weight;
+	}
+	
 	public String GetTumorLocation() {
 		return this.TumorLocation;
 	}
@@ -174,14 +183,6 @@ public class PatientData {
 	
 	public int GetCancerStage() {
 		return this.CancerStage;
-	}
-	
-	public double GetTumorMass() {
-		return this.TumorMass;
-	}
-	
-	public int GetTumorQuantity() {
-		return this.TumorQuantity;
 	}
 	
 	public double GetWhiteBloodCellCount() {
@@ -221,6 +222,13 @@ public class PatientData {
 		return this.TotalDoseHighRisk;
 	}
 	
+	public int GetTotalTherapyWeeks() {
+		return this.TotalTherapyWeeks;
+	}
+	
+	public String GetRecommendedRiskLevel() {
+		return this.RecommendedRiskLevel;
+	}
 	
 	
 	
@@ -236,14 +244,17 @@ public class PatientData {
 		System.out.println("Tumor Location: " + this.GetTumorLocation());
 		System.out.println("Organ Mass: " + Double.toString(this.GetOrganMass()));
 		System.out.println("Cancer Stage: " + Integer.toString(this.GetCancerStage()));
-		System.out.println("Tumor Mass: " + Double.toString(this.GetTumorMass()));
-		System.out.println("Tumor Quantity: " + Integer.toString(this.GetTumorQuantity()));
 		System.out.println("Red blood: " + Double.toString(this.GetRedBloodCellCount()));
 		System.out.println("White blood: " + Double.toString(this.GetWhiteBloodCellCount()));
 		System.out.println("Sodium: " + Double.toString(this.GetSodium()));
 		System.out.println("Chloride: " + Double.toString(this.GetChloride()));
 		System.out.println("Glucose: " + Double.toString(this.GetGlucose()));
 		System.out.println("Albumin: " + Double.toString(this.GetAlbumin()));
+		System.out.println("Total dose low risk: " + Double.toString(this.GetTotalDoseLowRisk()));
+		System.out.println("Total dose medium risk: " + Double.toString(this.GetTotalDoseMedRisk()));
+		System.out.println("Total dose high risk: " + Double.toString(this.GetTotalDoseHighRisk()));
+		System.out.println("Dose delivered over: " + Integer.toString(this.GetTotalTherapyWeeks()));
+		System.out.println("Recommended Risk level: " + this.GetRecommendedRiskLevel());
 	}
 	
 }

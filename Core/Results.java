@@ -10,6 +10,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import Calculators.RadiationCalculator;
+import Calculators.SurgeryCalculator;
+import Calculators.ChemotherapyCalculator;
+
 /**
  * Servlet implementation class Router
  */
@@ -39,12 +43,11 @@ public class Results extends HttpServlet {
 		double height = Double.parseDouble(request.getParameter("height"));
 		String gender = request.getParameter("Gender");
 		int age = Integer.parseInt(request.getParameter("age"));
+		double weight = Double.parseDouble(request.getParameter("weight"));
 
 		String tumorlocation = request.getParameter("tumorLocation");
 		double organmass = Double.parseDouble(request.getParameter("organMass"));
 		int cancerstage = Integer.parseInt(request.getParameter("cancerStage"));
-		double tumormass = Double.parseDouble(request.getParameter("tumorMass"));
-		int tumorquantity = Integer.parseInt(request.getParameter("tumorQuantity"));
 
 		double redblood = Double.parseDouble(request.getParameter("redBlood"));
 		double whiteblood = Double.parseDouble(request.getParameter("whiteBlood"));
@@ -54,18 +57,16 @@ public class Results extends HttpServlet {
 		double albumin = Double.parseDouble(request.getParameter("albumin"));
 
 		//Construct the PatientData object from the patient data
-		PatientData patient = new PatientData(firstName, lastName, ID, height, gender, age, tumorlocation, organmass, cancerstage, tumormass, tumorquantity,
+		PatientData patient = new PatientData(firstName, lastName, ID, height, gender, age, weight, tumorlocation, organmass, cancerstage,
 											  redblood, whiteblood, glucose, sodium, chloride, albumin);
 		
-		//testing:
-		patient.Print();
 		
 		//Here is where we call the calculations:
-		//code stubs:
-		//RadiationCalculator RadiationCalculator = new RadiationCalculator();
-		//var RadiationDose = RadiationCalculator.getRadiation(pt anatomy variables);
+		RadiationCalculator RadCalculator = new RadiationCalculator(patient);
+		RadCalculator.CalculateTreatment();
+		patient.Print();
+
 		//print radiation to screen as output
-		
 		
 		
 		
