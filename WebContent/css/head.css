@@ -1,50 +1,40 @@
- html, body {
-    margin: 0;
-    height: 100%;
- }	
+html, body {
+	margin: 0 auto;
+	height: 100%;
+}	
 
- a {
- 	text-underline: none;
- 	color: black;
- }
- body {
- 	text-align: center;
- }
+header {
+	text-align: center;
+}
 
- header {
- 	height: 300px;
- 	width: 100%;
- 	position: fixed;
-  	z-index: 1;
-  	margin: 0;
+.navBar {
+	height: 60px;
+	background: darkgrey;
+	width: 100%;
+	position: fixed;
+	z-index: 1;
+	margin: 0;
 	padding: 0;
- }
- ul {
-	list-style-type: none;
-	
- }
+}
 
- li {
- 	float: left;
- }
- li > a {
- 	text-underline: none;
- 	color: black;
- }
- ul > h5 {
- 	float: right;
- }
+.header {
+	font-size: 40px;
+	margin: 10px 0 0 20px;
+	float: left;
+}
 
- .header {
- 	font-size: 40px;
- }
- 
- #main {
- 	height: 300px;
- 	font-size: 20px;
- }
+.navigation {
+	list-style: none;
+}
 
- footer {
- 	font-size: 30px;
- 	height: 300px;
- }
+.navigation > li {
+	float: right;
+	margin-top: 10px;
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+.navigation > li > a {
+	text-decoration: none;
+	color: black;
+}

@@ -5,13 +5,22 @@
 <title>Insert title here</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
+<link rel="stylesheet" href="css/head.css">
 <link rel="stylesheet" href="css/treatment.css">
 </head>
 <body>
 
-<div class="header">
-	<h1>Treatment Plan</h1>
-</div>
+<header>	
+	<div class="navBar">
+		<h3 class="header">Treatment Plan</h3>
+		<ul class="navigation">
+			<li><a href="create.html">Create</a></li>
+			<li>Update</li>
+			<li><a href="treatmentplan.html">View</a></li>
+		</ul>
+	</div>
+</header>
+
 <div class="sections">
 	<div class="info">
 		<div class="patientName">
@@ -84,6 +93,8 @@
 				<hr>
 				<h5>3000 Gv</h5>
 			</div>
+		</div>
+		<div class="bottom-row">
 			<div class="radiation-dose">
 				<h4>Recommended Total Dose</h4>
 				<hr>
@@ -94,13 +105,24 @@
 				<hr>
 				<h5>8 weeks</h5>
 			</div>
-			<div class="calculations">
-				<h4>Calculations</h4>
-				<hr>
-				<h5>Low risk absorbed dose: (9.9sv)/((5)*(2*organRiskFactor)+nearbyOrganRiskFactor)</h5>
-				<hr>
-				<h5>Low risk total dose: absorbed dose*organ mass</h5>
-			</div>
+		</div>
+
+		<div class="calculations">
+			<h4>Calculations</h4>
+			<hr>
+			<div>
+				<div>
+					<h5>Low risk absorbed dose:</h5>
+					<br> 
+					<h5>(9.9sv)/((5)*(2*organRiskFactor)+nearbyOrganRiskFactor)</h5>
+				</div>
+			
+				<div>
+					<h5>Low risk total dose: </h5>
+					<br>
+					<h5>absorbed dose*organ mass</h5>
+				</div>
+			</div>	
 		</div>
 	</div>
 	<div class="chemotherapy">

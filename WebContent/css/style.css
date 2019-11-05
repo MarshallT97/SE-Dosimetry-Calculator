@@ -1,10 +1,10 @@
 
-html, body{
+html, body {
 	background: lightgrey;
-	margin: 0 auto;
-	height: 100%;
 }
-
+form {
+	padding-top: 80px;
+}
 .field {
 	padding: 5px;
 }
