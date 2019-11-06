@@ -26,6 +26,7 @@ public class SurgeryCalculator extends Calculator {
 		} else if(Patient.GetCancerStage() == 4) {
 			System.out.println("High Risk: Chemotherapy to stop the cancer from spreading further");
 		}
+		
 	}
 
 
