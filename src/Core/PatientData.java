@@ -32,7 +32,7 @@ public class PatientData {
 	private String RecommendedRiskLevel;
 	
 	//Constructor
-	PatientData(String firstname, String lastname, String ID, double height, String gender, int age, double weight,
+	public PatientData(String firstname, String lastname, String ID, double height, String gender, int age, double weight,
 			String tumorlocation, double organmass, int cancerstage, 
 			double whitebloodcellcount, double redbloodcellcount, double glucose, double sodium, double chloride, double albumin)
 	{

@@ -1,3 +1,7 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<%@ page import="Core.*" %>
+<%@ page import="Calculators.*" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,6 +14,37 @@
 </head>
 <body>
 
+<%	
+		//Get Input patient data From Header
+		String firstName = request.getParameter("firstName");
+		String lastName = request.getParameter("lastName");
+		String ID = request.getParameter("ID");
+		double height = Double.parseDouble(request.getParameter("height"));
+		String gender = request.getParameter("Gender");
+		int age = Integer.parseInt(request.getParameter("age"));
+		double weight = Double.parseDouble(request.getParameter("weight"));
+
+		String tumorlocation = request.getParameter("tumorLocation");
+		double organmass = Double.parseDouble(request.getParameter("organMass"));
+		int cancerstage = Integer.parseInt(request.getParameter("cancerStage"));
+
+		double redblood = Double.parseDouble(request.getParameter("redBlood"));
+		double whiteblood = Double.parseDouble(request.getParameter("whiteBlood"));
+		double glucose = Double.parseDouble(request.getParameter("glucose"));
+		double sodium = Double.parseDouble(request.getParameter("sodium"));
+		double chloride = Double.parseDouble(request.getParameter("chloride"));
+		double albumin = Double.parseDouble(request.getParameter("albumin"));
+
+		//Construct the PatientData object from the patient data
+		PatientData patient = new PatientData(firstName, lastName, ID, height, gender, age, weight, tumorlocation, organmass, cancerstage,
+											  redblood, whiteblood, glucose, sodium, chloride, albumin);
+		
+		
+		//Here is where we call the calculations:
+		RadiationCalculator RadCalculator = new RadiationCalculator(patient);
+		RadCalculator.CalculateTreatment();
+		patient.Print();
+%>
 <header>	
 	<div class="navBar">
 		<h3 class="header">Treatment Plan</h3>
@@ -24,48 +59,48 @@
 <div class="sections">
 	<div class="info">
 		<div class="patientName">
-			<h4>Patient Name: </h4><p>John Doe</p>
+			<h4>Patient Name: </h4><p><%out.print(patient.GetFirstName()); %></p>
 		</div>
 		<div class="age">
-			<h4>Age: </h4><p>62</p>
+			<h4>Age: </h4><p><%out.print(patient.GetAge()); %></p>
 		</div>
 		<div class="gender">
 			<h4>Gender: </h4>
-			<p>M</p>
+			<p><%out.print(patient.GetGender()); %></p>
 		</div>
 		<div class="height">
 			<h4>Height:</h4>
-			<p>5' 10"</p>
+			<p><%out.print(patient.GetHeight()); %></p>
 		</div>
 		<div class="weight">
 			<h4>Weight: </h4>
-			<p>170</p>
+			<p><%out.print(patient.GetWeight()); %></p>
 		</div>
 		<div class="location">
 			<h4>Tumor Location</h4>
-			<p>Lungs</p>
+			<p><%out.print(patient.GetTumorLocation()); %></p>
 		</div>
 		<div class="cancer-stage">
 			<h4>Cancer Stage</h4>
-			<p>1</p>
+			<p><%out.print(patient.GetCancerStage()); %></p>
 		</div>
 		<div class="organ-mass">
 			<h4>Organ Mass</h4>
-			<p>5kg</p>
+			<p><%out.print(patient.GetOrganMass()); %></p>
 		</div>
 		<div class="white-blood">
 			<h4>White Blood Cell Count</h4>
-			<p>1000</p>
+			<p><%out.print(patient.GetWhiteBloodCellCount()); %></p>
 			<p>Abnormally High</p>
 		</div>
 		<div class="red-blood">
-			<h4>White Blood Cell Count</h4>
-			<p>10</p>
+			<h4>Red Blood Cell Count</h4>
+			<p><%out.print(patient.GetRedBloodCellCount()); %></p>
 			<p>Abnormally Low</p>
 		</div>
 		<div class="albumin">
 			<h4>Albumin Levels</h4>
-			<p>50</p>
+			<p><%out.print(patient.GetAlbumin()); %></p>
 			<p>Average</p>
 		</div>
 	</div>

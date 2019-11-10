@@ -14,7 +14,6 @@
 		<input type="text" name="username" placeholder="Username"/> <br/></div>
 		<div class="field"><label>Password: </label>
 		<input type="password" name="password" placeholder="Password"/> <br/></div>
-		
 		<div class="submit">
 			<button type="submit">Submit</button>
 		</div>
