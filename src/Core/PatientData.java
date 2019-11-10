@@ -31,6 +31,9 @@ public class PatientData {
 	private int TotalTherapyWeeks;
 	private String RecommendedRiskLevel;
 	
+	// Recommended Surgeries from Surgery Class
+	private String RecomendedSurgery;
+	
 	//Constructor
 	public PatientData(String firstname, String lastname, String ID, double height, String gender, int age, double weight,
 			String tumorlocation, double organmass, int cancerstage, 
@@ -143,6 +146,10 @@ public class PatientData {
 		this.RecommendedRiskLevel = level;
 	}
 	
+	public void setRecommendedSurgery(String RecommendedSurgery) {
+		this.RecomendedSurgery = RecommendedSurgery;
+	}
+	
 	
 	//Getter methods
 	public String GetFirstName() {
@@ -228,6 +235,10 @@ public class PatientData {
 	
 	public String GetRecommendedRiskLevel() {
 		return this.RecommendedRiskLevel;
+	}
+	
+	public String GetRecommendedSurgery() {
+		return this.RecomendedSurgery;
 	}
 	
 	
