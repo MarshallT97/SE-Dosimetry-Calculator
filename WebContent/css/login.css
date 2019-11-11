@@ -1,0 +1,18 @@
+html, body {
+	margin: 0 auto;
+	height: 100%;
+	background: lightgrey;
+}	
+
+.loginForm {
+	display: flex; 
+	justify-content: center; 
+	align-items: center;
+	flex-direction: column; 
+	height: 100%; 
+	width: 100%;
+}
+
+.field, .submit {
+	margin-top: 10px;
+}

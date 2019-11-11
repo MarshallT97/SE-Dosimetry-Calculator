@@ -5,11 +5,13 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Welcome, Please Log In</title>
+<link rel="stylesheet" href="css/login.css">
 </head>
 <body>
 	
-	<form method="post" action="/Dosimetry_Calculator/Login">
-	
+	<form method="post" action="/Dosimetry_Calculator/Login" class="loginForm">
+		<h3>Dosimetry Calculator</h3>
+		<h4>Log in </h4>
 		<div class="field"><label>Username: </label>
 		<input type="text" name="username" placeholder="Username"/> <br/></div>
 		<div class="field"><label>Password: </label>
@@ -17,7 +19,6 @@
 		<div class="submit">
 			<button type="submit">Submit</button>
 		</div>
-	
 	</form>
 	
 </body>

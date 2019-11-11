@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Treatment Plan</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 <link rel="stylesheet" href="css/head.css">
@@ -43,6 +43,8 @@
 		//Here is where we call the calculations:
 		RadiationCalculator RadCalculator = new RadiationCalculator(patient);
 		RadCalculator.CalculateTreatment();
+		SurgeryCalculator SurgCalculator = new SurgeryCalculator(patient);
+		SurgCalculator.CalculateTreatment();
 		patient.Print();
 %>
 <header>	
@@ -51,7 +53,7 @@
 		<ul class="navigation">
 			<li><a href="create.html">Create</a></li>
 			<li>Update</li>
-			<li><a href="treatmentplan.html">View</a></li>
+			<li>View</li>
 		</ul>
 	</div>
 </header>
@@ -117,16 +119,19 @@
 				<h4>Low Risk Total Dose</h4>
 				<hr>
 				<h5>800 Gy</h5>
+				<h5><%out.print(patient.GetTotalDoseLowRisk()); %> Gy</h5>
 			</div>
 			<div class="risk-level">
 				<h4>Medium Risk Total Dose</h4>
 				<hr>
 				<h5>1500 Gv</h5>
+				<h5><%out.print(patient.GetTotalDoseMedRisk()); %> Gv</h5>
 			</div>
 			<div class="risk-level">
 				<h4>High Risk Total Dose</h4>
 				<hr>
 				<h5>3000 Gv</h5>
+				<h5><%out.print(patient.GetTotalDoseHighRisk()); %> Gv</h5>
 			</div>
 		</div>
 		<div class="bottom-row">
@@ -134,11 +139,13 @@
 				<h4>Recommended Total Dose</h4>
 				<hr>
 				<h5>Low: 800 Gy</h5>
+				<h5><%out.print(patient.GetRecommendedRiskLevel()); %></h5>
 			</div>
 			<div class="therapy-weeks">
 				<h4>Total Therapy Weeks</h4>
 				<hr>
 				<h5>8 weeks</h5>
+				<h5><%out.print(patient.GetTotalTherapyWeeks()); %> weeks</h5>
 			</div>
 		</div>
 
@@ -175,7 +182,7 @@
 	</div>
 	<div class="surgery">
 		<h2>Surgery</h2>
-		<h4 id="surgery">None</h4>
+		<h4 id="surgery"><%out.print(patient.GetRecommendedSurgery()); %></h4>
 	</div>
 </div>
 
